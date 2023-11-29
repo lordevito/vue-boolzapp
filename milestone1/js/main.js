@@ -5,14 +5,14 @@ const { createApp } = Vue
 
   createApp({
     data() {
-      return {
-        contacts: [
-            {
+    return {
+        inputMsg: ``,
+        activeIndex: 0,
+        contacts: [{
                 name: 'Michele',
-                avatar: './img/avatar_1.jpg',
+                avatar: 'img/avatar_1.jpg',
                 visible: true,
-                messages: [
-                    {
+                messages: [{
                         date: '10/01/2020 15:30:55',
                         message: 'Hai portato a spasso il cane?',
                         status: 'sent'
@@ -31,10 +31,9 @@ const { createApp } = Vue
             },
             {
                 name: 'Fabio',
-                avatar: './img/avatar_2.jpg',
+                avatar: 'img/avatar_2.jpg',
                 visible: true,
-                messages: [
-                    {
+                messages: [{
                         date: '20/03/2020 16:30:00',
                         message: 'Ciao come stai?',
                         status: 'sent'
@@ -53,10 +52,9 @@ const { createApp } = Vue
             },
             {
                 name: 'Samuele',
-                avatar: './img/avatar_3.jpg',
+                avatar: 'img/avatar_3.jpg',
                 visible: true,
-                messages: [
-                    {
+                messages: [{
                         date: '28/03/2020 10:10:40',
                         message: 'La Marianna va in campagna',
                         status: 'received'
@@ -75,10 +73,9 @@ const { createApp } = Vue
             },
             {
                 name: 'Alessandro B.',
-                avatar: './img/avatar_4.jpg',
+                avatar: 'img/avatar_4.jpg',
                 visible: true,
-                messages: [
-                    {
+                messages: [{
                         date: '10/01/2020 15:30:55',
                         message: 'Lo sai che ha aperto una nuova pizzeria?',
                         status: 'sent'
@@ -92,10 +89,9 @@ const { createApp } = Vue
             },
             {
                 name: 'Alessandro L.',
-                avatar: './img/avatar_5.jpg',
+                avatar: 'img/avatar_5.jpg',
                 visible: true,
-                messages: [
-                    {
+                messages: [{
                         date: '10/01/2020 15:30:55',
                         message: 'Ricordati di chiamare la nonna',
                         status: 'sent'
@@ -109,10 +105,9 @@ const { createApp } = Vue
             },
             {
                 name: 'Claudia',
-                avatar: './img/avatar_6.jpg',
+                avatar: 'img/avatar_6.jpg',
                 visible: true,
-                messages: [
-                    {
+                messages: [{
                         date: '10/01/2020 15:30:55',
                         message: 'Ciao Claudia, hai novità?',
                         status: 'sent'
@@ -131,10 +126,9 @@ const { createApp } = Vue
             },
             {
                 name: 'Federico',
-                avatar: './img/avatar_7.jpg',
+                avatar: 'img/avatar_7.jpg',
                 visible: true,
-                messages: [
-                    {
+                messages: [{
                         date: '10/01/2020 15:30:55',
                         message: 'Fai gli auguri a Martina che è il suo compleanno!',
                         status: 'sent'
@@ -148,10 +142,9 @@ const { createApp } = Vue
             },
             {
                 name: 'Davide',
-                avatar: './img/avatar_8.jpg',
+                avatar: 'img/avatar_8.jpg',
                 visible: true,
-                messages: [
-                    {
+                messages: [{
                         date: '10/01/2020 15:30:55',
                         message: 'Ciao, andiamo a mangiare la pizza stasera?',
                         status: 'received'
@@ -169,6 +162,15 @@ const { createApp } = Vue
                 ],
             }
         ],
+        methods: {
+            Active(index) {
+                this.activeIndex = index
+            },
+            lastMsg(index) {
+                let msg = contacts[index].messages
+                return msg[msg.length - 1]
+            }, 
+        },
     }
-    },    
-}).mount('#app')
+    },
+}).mount(`#root`);

@@ -9,10 +9,83 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <!--Link Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Vue Boolzapp</title>
 </head>
 <body>
-    
+    <!--sfondo barra verde-->
+    <nav>
+        <section class="green-top"></section>
+    </nav>
+    <!--fine sfondo barra verde-->
+    <main>
+        <section class="main-container">
+            <div id="root">
+                <div class="container-chats">
+                    <div class="contact">
+                        <div class="info">
+                            <div class="left-info">
+                                <img src="img/avatar_io.jpg" alt="User's photo">
+                                <h5>Nome Utente</h5>
+                            </div>
+                            <div class="right-icon">
+                                <i class="fa-solid fa-circle-notch"></i>
+                                <i class="fa-solid fa-message"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>
+                        <div class="notifiche">
+                            <span id="bell"><i class="fa-solid fa-bell-slash"></i></span>
+                            <span>
+                                <h5>Ricevi notifiche di nuovi messaggi</h5>
+                                <a href="">Attiva notifiche desktop</a>
+                            </span>
+                        </div>
+                        <div class="search">
+                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                        <ul class="list">
+                            <li :class="{'bg-active': i == activeIndex}" class="list-chat" v-for= "(utente,i) in contacts" @click= "Active(i) ">
+                                <img :src="'img/avatar_1.jpg' + user.avatar " alt="user">
+                                <div class="info-c">
+                                    <span class="name-user">{{ utente.name }}</span>
+                                    <span class="msg-user">{{ lastMsg(i).text }}</span>    
+                                </div>
+                                <span class="date-user">{{ lastMsg(i).date }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="chat"></div>
+                    <div class="info-chat">
+                        <div class="info-chat-left">
+                            <img :src="img/avatar_1.jpg" alt="user">
+                            <div class="info-c">
+                                <span class="name-user">{{ contacts[activeIndex].name }}</span>
+                                 <span class="msg-user">Ultimo accesso :{{ contacts[activeIndex].messages[contacts[activeIndex].messages.length - 1].date }}</span>    
+                            </div>
+
+                        </div>
+                        <div class="right-icon-chat">
+                            <i class="fa-solid fa-circle-notch"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <div class="main-chat">
+                        <span><p class="sent">Scompensi emotivi?</p></span>
+                        <span><p class="received">A voglia!</p></span>
+                    </div>
+                    <div class="write-chat">
+                        <span><i class="far fa-smile"></i></span>
+                        <input type="text" placeholder="Scrivi messaggio">
+                        <span><i class="fas fa-microphone"></i></span>
+                    </div>
+                </div>  
+                </div>
+            </div>
+        </section>
+    </main>
     <!--Link Vue JS-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!--Link file JS-->
