@@ -164,7 +164,8 @@ const { createApp } = Vue;
         ],
         methods: {
             active(index) {
-                this.activeIndex = index;
+                console.log(index);
+                // this.activeIndex = index;
             },
             lastMsg(index) {
                 let msg = contacts[index].messages;

@@ -255,8 +255,11 @@ i {
 
 .sent {
     background-color: #D5F9BB;
+    font-size: 15px;
     float: right;
-    margin-right: 50px;
+    margin:10px 50px 10px 0;
+    padding: 7px 15px 7px 10px;
+    border-radius: 20px;
 }
 .received {
     background-color: #fff;

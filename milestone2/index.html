@@ -51,7 +51,7 @@
                         </div>
                         <ul class="list">
                             <li :class="{'bg-active': i === activeIndex}" class="list-chat" v-for="(user,i) in contacts"
-                                @click="active(i) ">
+                                @click="active(i)">
                                 <img :src="user.avatar" alt="user">
                                 <div class="info-c">
                                     <span class="name-user">{{ user.name }}</span>
@@ -81,7 +81,7 @@
                         <div class="main-chat">
                             <div v-for="(obj,i) in contacts[activeIndex].messages">
                             <span>
-                                <p class="sent">{{ obj.message }}</p>
+                                <p class="sent" :class="obj.status">{{ obj.message }}</p>
                             </span>
                             <!-- <span>
                                 <p class="received">A voglia!</p>
