@@ -178,11 +178,21 @@ const { createApp } = Vue;
             let inputMessage = {
                 date: '10/01/2020 15:30:55',
                 message: this.newMessage,
-                status: 'sent'  
+                status: 'sent'
             };
 
             this.contacts[index].messages.push(inputMessage);
             this.newMessage = ``;
+            setTimeout(this.receivedMessage,1000,index);
         }, 
+        receivedMessage(index){
+            let cpuMessage = {
+                date: '10/01/2020 15:30:55',
+                message: `ok`,
+                status: 'received'  
+            };
+
+            this.contacts[index].messages.push(cpuMessage);
+        }
     },
 }).mount(`#root`);
