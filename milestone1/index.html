@@ -46,20 +46,20 @@
                             <input type="text" placeholder="Cerca o inizia una nuova chat">
                         </div>
                         <ul class="list">
-                            <li :class="{'bg-active': i === activeIndex}" class="list-chat" v-for= "(user,i) in contacts" @click= "Active(i) ">
-                                <img :src="'img/avatar_1.jpg' + user.avatar " alt="user">
+                            <li :class="{'bg-active': i === activeIndex}" class="list-chat" v-for= "(user,i) in contacts" @click= "active(i) ">
+                                <img :src="user.avatar" alt="user">
                                 <div class="info-c">
                                     <span class="name-user">{{ user.name }}</span>
-                                    <span class="msg-user">{{ lastMsg(i).message }}</span>    
+                                    <!-- <span class="msg-user">{{ lastMsg(i).message }}</span>     -->
                                 </div>
-                                <span class="date-user">{{ lastMsg(i).date }}</span>
+                                <!-- <span class="date-user">{{ lastMsg(i).date }}</span> -->
                             </li>
                         </ul>
                     </div>
-                    <div class="chat"></div>
+                    <!-- <div class="chat"></div> -->
                     <div class="info-chat">
                         <div class="info-chat-left">
-                            <img :src="img/avatar_1.jpg" alt="user">
+                            <img :src="`user.avatar`" alt="user">
                             <div class="info-c">
                                 <span class="name-user">{{ contacts[activeIndex].name }}</span>
                                 <span class="msg-user">Ultimo accesso :{{ contacts[activeIndex].messages[contacts[activeIndex].messages.length - 1].date }}</span>    
@@ -73,6 +73,7 @@
                         </div>
                     </div>
                     <div class="main-chat">
+
                     </div>
                     <div class="write-chat">
                         <span><i class="fa-regular fa-face-smile"></i></span>

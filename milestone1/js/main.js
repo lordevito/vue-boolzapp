@@ -162,15 +162,15 @@ const { createApp } = Vue;
                 ],
             }
         ],
-        // methods: {
-        //     active(index) {
-        //         this.activeIndex = index
-        //     },
-        //     lastMsg(index) {
-        //         let msg = contacts[index].messages
-        //         return msg[msg.length - 1]
-        //     }, 
-        // },
+        methods: {
+            active(index) {
+                this.activeIndex = index
+            },
+            lastMsg(index) {
+                let msg = contacts[index].messages
+                return msg[msg.length - 1]
+            }, 
+        },
     }
     },
 }).mount(`#root`);
