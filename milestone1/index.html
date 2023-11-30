@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +11,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <!--Link Font Awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Vue Boolzapp</title>
 </head>
+
 <body>
     <!--sfondo barra verde-->
     <nav>
@@ -46,7 +50,8 @@
                             <input type="text" placeholder="Cerca o inizia una nuova chat">
                         </div>
                         <ul class="list">
-                            <li :class="{'bg-active': i === activeIndex}" class="list-chat" v-for= "(user,i) in contacts" @click= "active(i) ">
+                            <li :class="{'bg-active': i === activeIndex}" class="list-chat" v-for="(user,i) in contacts"
+                                @click="active(i) ">
                                 <img :src="user.avatar" alt="user">
                                 <div class="info-c">
                                     <span class="name-user">{{ user.name }}</span>
@@ -56,13 +61,13 @@
                             </li>
                         </ul>
                     </div>
-                    <!-- <div class="chat"></div> -->
                     <div class="info-chat">
                         <div class="info-chat-left">
-                            <img :src="`user.avatar`" alt="user">
+                            <img :src="`user.avatar` + contacts[activeIndex].avatar" alt="user">
                             <div class="info-c">
                                 <span class="name-user">{{ contacts[activeIndex].name }}</span>
-                                <span class="msg-user">Ultimo accesso :{{ contacts[activeIndex].messages[contacts[activeIndex].messages.length - 1].date }}</span>    
+                                <span class="msg-user">Ultimo accesso
+                                    :{{ contacts[activeIndex].messages[contacts[activeIndex].messages.length - 1].date }}</span>
                             </div>
 
                         </div>
@@ -73,15 +78,21 @@
                         </div>
                     </div>
                     <div class="main-chat">
-
+                        <span>
+                            <p class="sent">Scompensi emotivi?</p>
+                        </span>
+                        <span>
+                            <p class="received">A voglia!</p>
+                        </span>
                     </div>
                     <div class="write-chat">
                         <span><i class="fa-regular fa-face-smile"></i></span>
                         <input type="text" placeholder="Scrivi messaggio">
                         <span><i class="fa-solid fa-microphone"></i></span>
                     </div>
-                </div>  
+
                 </div>
+            </div>
             </div>
         </section>
     </main>
@@ -90,4 +101,5 @@
     <!--Link file JS-->
     <script src="js/main.js"></script>
 </body>
+
 </html>
