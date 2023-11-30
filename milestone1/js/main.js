@@ -1,7 +1,7 @@
 `use strict`;
 
 
-const { createApp } = Vue
+const { createApp } = Vue;
 
   createApp({
     data() {
@@ -162,15 +162,15 @@ const { createApp } = Vue
                 ],
             }
         ],
-        methods: {
-            Active(index) {
-                this.activeIndex = index
-            },
-            lastMsg(index) {
-                let msg = contacts[index].messages
-                return msg[msg.length - 1]
-            }, 
-        },
+        // methods: {
+        //     active(index) {
+        //         this.activeIndex = index
+        //     },
+        //     lastMsg(index) {
+        //         let msg = contacts[index].messages
+        //         return msg[msg.length - 1]
+        //     }, 
+        // },
     }
     },
 }).mount(`#root`);
