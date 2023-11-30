@@ -6,7 +6,7 @@ const { createApp } = Vue;
   createApp({
     data() {
     return {
-        inputMsg: ``,
+        newMessage: ``,
         activeIndex: 0,
         contacts: [{
                 name: 'Michele',
@@ -173,6 +173,16 @@ const { createApp } = Vue;
         lastMsg(index) {
             let msg = contacts[index].messages;
             return msg[msg.length - 1];
+        },
+        sendMessage(index){
+            let inputMessage = {
+                date: '10/01/2020 15:30:55',
+                message: this.newMessage,
+                status: 'sent'  
+            };
+
+            this.contacts[index].messages.push(inputMessage);
+            this.newMessage = ``;
         }, 
     },
 }).mount(`#root`);
