@@ -206,12 +206,12 @@ const { createApp } = Vue;
                 }
             });
         },
-        filteredUser(){
-            if (this.filterMsg !== ``) {
-                return this.contacts.filter((user) => user.name.toLowerCase().includes(this.filterMsg.toLowerCase()));
-            } else {
-                return this.contacts;
-            }
-        },
+        // filteredUser(){
+        //     if (this.filterMsg !== ``) {
+        //         return this.contacts.filter((user) => user.name.toLowerCase().includes(this.filterMsg.toLowerCase()));
+        //     } else {
+        //         return this.contacts;
+        //     }
+        // },
     },
 }).mount(`#root`);
