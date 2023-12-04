@@ -96,7 +96,7 @@
                         <!--inizio schermata chat-->
                         <div class="main-chat">
                             <div v-for="(obj,i) in contacts[activeIndex].messages">
-                                <span class="sent" :class="obj.status">{{ obj.message }}
+                                <!-- <span class="sent" :class="obj.status">{{ obj.message }}
                                     <i @click="showDrop(drop)" class="fas fa-chevron-down">
                                         <div :class="(contacts[activeIndex].messages[drop].drop) ? 'visible' : 'notvisible'"
                                             class="dropdown-msg">
@@ -109,7 +109,7 @@
                                     <div class="date-msg">
                                         <span id="date">{{ message.date }}</span>
                                     </div>
-                                </span>
+                                </span> -->
                             </div>
                         </div>
                         <div class="write-chat">
