@@ -193,7 +193,7 @@ const { createApp } = Vue;
             this.activeIndex = index;
         },
         lastMsg(index) {
-            let msg = contacts[index].messages;
+            let msg = this.contacts[index].messages;
             return msg[msg.length - 1];
         },
         sendMessage(index){

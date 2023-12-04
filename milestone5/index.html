@@ -64,9 +64,9 @@
                                     <img :src="user.avatar" alt="user">
                                     <div class="info-c">
                                         <span class="name-user">{{ user.name }}</span>
-                                        <span class="msg-user"></span>
+                                        <span class="msg-user">{{ lastMsg(i).text }}</span>
                                     </div>
-                                    <span class="date-user"></span>
+                                    <span class="date-user">{{ lastMsg(i).date }}</span>
                                 </li>
                             </div>
                         </ul>
