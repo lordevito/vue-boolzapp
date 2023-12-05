@@ -55,10 +55,11 @@
                         <!--fine barra notifiche-->
                         <!--inizio lista contatti-->
                         <div class="search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
                             <input type="text" @keyUp="searchUser" v-model="filterMsg" placeholder="Cerca o inizia una nuova chat">
                         </div>
                         <ul class="list">
-                            <div v-for="(user,i) in contacts">
+                            <template v-for="(user,i) in contacts">
                                 <li :class="{'bg-active': i === activeIndex}" class="list-chat"
                                     @click="active(i)" v-if="user.visible === true">
                                     <img :src="user.avatar" alt="user">
@@ -68,7 +69,7 @@
                                     </div>
                                     <span class="date-user">{{ lastMsg(i).date }}</span>
                                 </li>
-                            </div>
+                            </template>
                         </ul>
                         <!--fine lista contatti-->
                     </div>
@@ -87,7 +88,7 @@
 
                             </div>
                             <div class="right-icon-chat">
-                                <i class="fa-solid fa-circle-notch"></i>
+                                <i class="fa-solid fa-magnifying-glass"></i>
                                 <i class="fa-solid fa-paperclip"></i>
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>

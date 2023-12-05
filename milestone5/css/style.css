@@ -94,6 +94,14 @@
     justify-content: center;
     align-items: center;
 }
+
+.search i{
+    color: #919191;
+    background-color: #F6F6F6;
+    margin-right: 10px;
+    padding: 10px;
+}
+
 #bell {
     width: 40px;
     height: 40px;
@@ -116,10 +124,10 @@
     font-size: 11px;
 }
 .search > input {
-    width: 90%;
+    width: 80%;
     border: 0;
     padding: 7px;
-    border-radius: 50px;
+    border-radius: 10px;
 }
 
 .list {
